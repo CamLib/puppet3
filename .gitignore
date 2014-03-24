@@ -1,0 +1,6 @@
+.DS_Store
+.environment
+.node
+.vagrant
+*_hiera_secure.*
+
