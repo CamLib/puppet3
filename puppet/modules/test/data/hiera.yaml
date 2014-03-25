@@ -1,0 +1,6 @@
+---
+:hierarchy:
+    - "%{::clientcert}"
+    - "%{environment}"
+    - "common"
+
