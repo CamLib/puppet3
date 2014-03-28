@@ -1,0 +1,6 @@
+---
+ldapclient::packages:
+  - 'openldap-client-24.38'
+  - 'nss_ldap-1.265_9'
+  - 'pam_ldap-1.8.6_2'
+  - 'pam_mkhomedir-0.2'
