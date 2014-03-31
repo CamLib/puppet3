@@ -1,0 +1,16 @@
+---
+:backends:
+    - eyaml
+    - yaml
+
+:hierarchy:
+    - "%{clientcert}"
+    - "%{environment}"
+    - "common"
+
+:yaml:
+    :datadir: '/usr/local/etc/puppet/data'
+
+:eyaml:
+    :datadir: '/usr/local/etc/puppet/data'
+
