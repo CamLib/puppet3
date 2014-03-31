@@ -5,6 +5,7 @@
 
 :hierarchy:
     - "%{clientcert}"
+    - "%{operatingsystem}/%{operatingsystemrelease}"
     - "%{environment}"
     - "common"
 
