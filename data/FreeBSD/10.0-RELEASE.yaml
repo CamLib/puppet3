@@ -1,5 +1,7 @@
 ---
 
+classes: [ 'pkgng' ]
+
 ::packages:
   # ## List of packages to be installed on all FreeBSD 10.0 hosts
   - 'bash-4.3.0_1'
