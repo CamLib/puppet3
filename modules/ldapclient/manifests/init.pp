@@ -1,7 +1,8 @@
 #/etc/puppet/modules/ldapclient/manifests/init.pp
 
+
 class ldapclient (
-  $packages  = [] ,
+  $packages  = [],
 ) {
 
   package { $packages: 
