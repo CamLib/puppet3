@@ -1,5 +1,5 @@
 ---
 
-classes: [ 'base', 'pkgng' ]
+classes: [ 'base', 'dnsclient', 'ldapclient', 'pkgng' ]
 
 pkgprovider: 'pkgng'
