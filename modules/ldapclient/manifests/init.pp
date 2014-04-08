@@ -21,5 +21,8 @@ class ldapclient (
     '/etc/nsswitch.conf':
       source  => 'puppet:///modules/ldapclient/etc/nsswitch.conf',
       require => File['/usr/local/etc/ldap.conf'];
+    '/etc/pam.d/system':
+      content => template('/usr/local/etc/puppet/modules/ldapclient/templates/etc/pam.d/system.erb'),
+      require => File['/usr/local/etc/ldap.conf'];
   }
 }
