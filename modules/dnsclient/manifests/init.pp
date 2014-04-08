@@ -5,7 +5,7 @@ class dnsclient (
   $pkgprovider = '',
 ) {
 
-  package { $dnspclient_packages: 
+  package { $dnsclient_packages: 
     ensure   =>  installed,
   }
 
