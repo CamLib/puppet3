@@ -1,5 +1,5 @@
 ---
 
-classes: [ 'pkgng' ]
+classes: [ 'base', 'pkgng' ]
 
 pkgprovider: 'pkgng'
