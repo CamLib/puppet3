@@ -37,7 +37,7 @@ ldap_version 3
 
 # The distinguished name to bind to the server with.
 # Optional: default is to bind anonymously.
-binddn nss_user@ad.lib.cam.ac.uk
+binddn CUL\nss_user
 
 # The credentials to bind with.
 # Optional: default is no credential.
@@ -266,6 +266,8 @@ pam_password ad
 # /etc/openldap/ldap.conf using the TLS_REQCERT setting.  The default for
 # OpenLDAP 2.0 and earlier is "no", for 2.1 and later is "yes".
 #tls_checkpeer yes
+
+tls_cacert = /usr/local/etc/openldap/cert.pem
 
 # CA certificates for server certificate verification
 # At least one of these are required if tls_checkpeer is "yes"
