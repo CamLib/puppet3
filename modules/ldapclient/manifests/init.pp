@@ -24,5 +24,11 @@ class ldapclient (
     '/etc/pam.d/system':
       content => template('/usr/local/etc/puppet/modules/ldapclient/templates/etc/pam.d/system.erb'),
       require => File['/usr/local/etc/ldap.conf'];
+    '/etc/pam.d/sshd':
+      content => template('/usr/local/etc/puppet/modules/ldapclient/templates/etc/pam.d/sshd.erb'),
+      require => File['/usr/local/etc/ldap.conf'];
+    '/etc/pam.d/su':
+      content => template('/usr/local/etc/puppet/modules/ldapclient/templates/etc/pam.d/su.erb'),
+      require => File['/usr/local/etc/ldap.conf'];
   }
 }
