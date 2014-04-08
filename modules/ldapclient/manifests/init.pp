@@ -5,7 +5,6 @@ class ldapclient (
   $pkgprovider = '',
 ) {
 
-
   package { $packages: 
     ensure   =>  installed,
   }
