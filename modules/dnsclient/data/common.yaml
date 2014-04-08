@@ -1,12 +1,11 @@
 ---
 
-dnsclient::searchorder:
+searchorder:
   - 'ds.lib.cam.ac.uk ad.lib.cam.ac.uk lib.cam.ac.uk dmz.caret.local'
 
-
-dnsclient::nameserver1:
+nameserver1:
   - '192.168.101.107'
 
-dnsclient::nameserver2:
+nameserver2:
   - '192.168.101.209'
 
