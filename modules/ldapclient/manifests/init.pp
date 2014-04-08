@@ -17,9 +17,9 @@ class ldapclient (
     '/usr/local/etc/nss_ldap.conf':
       ensure  => link,
       target  => '/usr/local/etc/ldap.conf',
-      require => [Package['$ldapclient_packages'], File['/usr/local/etc/ldap.conf']];
+      require => [Package["$ldapclient_packages"], File['/usr/local/etc/ldap.conf']];
     '/etc/nsswitch.conf':
       source  => 'puppet:///modules/ldapclient/etc/nsswitch.conf',
-      require => [Package['$ldapclient_packages'], File['/usr/local/etc/ldap.conf']];
+      require => [Package["$ldapclient_packages"], File['/usr/local/etc/ldap.conf']];
   }
 }
