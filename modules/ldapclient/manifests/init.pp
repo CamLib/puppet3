@@ -1,11 +1,11 @@
 #/etc/puppet/modules/ldapclient/manifests/init.pp
 
 class ldapclient (
-  $packages  = [],
+  $ldapclient_packages  = [],
   $pkgprovider = '',
 ) {
 
-  package { $packages: 
+  package { $ldapclient_packages: 
     ensure   =>  installed,
   }
 
@@ -17,6 +17,9 @@ class ldapclient (
     '/usr/local/etc/nss_ldap.conf':
       ensure  => link,
       target  => '/usr/local/etc/ldap.conf',
-      require => File['/usr/local/etc/ldap.conf'];
+      require => [Package['$ldapclient_packages'], File['/usr/local/etc/ldap.conf']];
+    '/etc/nsswitch.conf':
+      source  => 'puppet:///modules/ldapclient/etc/nsswitch.conf',
+      require => [Package['$ldapclient_packages'], File['/usr/local/etc/ldap.conf']];
   }
 }
