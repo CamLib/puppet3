@@ -3,6 +3,6 @@
 ## This file is dervied from a puppet template,
 ## modules/dnsclient/templates/etc/resolv.conf.erb
 
-search <%= dnsclient['searchorder'] %>
+search <%= searchorder %>
 nameserver <%= dnsclient['nameserver1'] %>
 nameserver <%= dnsclient['nameserver2'] %>
