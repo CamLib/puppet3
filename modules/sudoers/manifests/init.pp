@@ -3,14 +3,14 @@
 class sudoers (
   $sudoers_packages  = [],
   $pkgprovider = '',
+  $sudoers_file = '',
+  $sudoers_template = '',
 ) {
 
   package { $sudoers_packages: 
     ensure   =>  installed,
   }
 
-  $sudoers_file = '',
-  $sudoers_template = '',
 
 
   file { 
