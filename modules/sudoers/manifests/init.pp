@@ -4,7 +4,7 @@ class sudoers (
   $sudoers_packages  = [],
   $pkgprovider = '',
   $sudoers_file = '',
-  $sudoers_template = 'foo',
+  $sudoers_template = '',
 ) {
 
   debug ($sudoers_template)
