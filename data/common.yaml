@@ -1,7 +1,5 @@
 ---
 classes: ['']
 
-
-
-myclass::first_param: first_value
-myclass::second_param: second_value
+puppetroot: '/usr/local/etc/puppet'
+modroot: ${puppetroot}/modules
