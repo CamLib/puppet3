@@ -5,7 +5,6 @@ nameservers:
   - '192.168.101.107'
   - '192.168.101.209'
 
-ts457: '%{modroot}/foo'
 resolvtemplate: '/usr/local/etc/puppet/modules/dnsclient/templates/resolv.conf.erb'
 searchorder: 'ds.lib.cam.ac.uk ad.lib.cam.ac.uk lib.cam.ac.uk dmz.caret.local'
 
