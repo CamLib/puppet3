@@ -1,1 +1,7 @@
 ---
+classes: ['']
+
+
+
+myclass::first_param: first_value
+myclass::second_param: second_value

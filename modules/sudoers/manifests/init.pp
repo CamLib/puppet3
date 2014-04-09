@@ -4,9 +4,10 @@ class sudoers (
   $sudoers_packages  = [],
   $pkgprovider = '',
   $sudoers_file = '',
-  $sudoers_template = '',
+  $sudoers_template = 'foo',
 ) {
 
+  debug ($sudoers_template)
   package { $sudoers_packages: 
     ensure   =>  installed,
   }
@@ -15,6 +16,6 @@ class sudoers (
 
   file { 
     "$sudoers_file":
-      content => template("$sudoers_template");
+      content => template($sudoers_template);
   }
 }

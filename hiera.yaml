@@ -2,6 +2,7 @@
 :backends:
     - eyaml
     - yaml
+    - module_data
 
 :hierarchy:
     - "%{clientcert}"
