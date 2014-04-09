@@ -7,7 +7,6 @@ class sudoers (
   $sudoers_template = '',
 ) {
 
-  debug ($sudoers_template)
   package { $sudoers_packages: 
     ensure   =>  installed,
   }
