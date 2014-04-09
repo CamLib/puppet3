@@ -2,4 +2,4 @@
 classes: ['']
 
 puppetroot: '/usr/local/etc/puppet'
-modroot: ${puppetroot}/modules
+modroot:    '/usr/local/etc/puppet/modules'
