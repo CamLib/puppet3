@@ -17,6 +17,6 @@ class dnsclient (
 
   file { 
     '/etc/resolv.conf':
-      content => template($resolvtemplate);
+      content => template(${resolvtemplate});
   }
 }
