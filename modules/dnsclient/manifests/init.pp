@@ -2,7 +2,7 @@
 
 class dnsclient (
   $dnsclient_packages  = [],
-  $nameservers = hiera('namservers'),
+  $nameservers = hiera('nameservers'),
   $pkgprovider = '',
   $resolvtemplate = hiera('resolvtemplate'),
   $searchorder = hiera('searchorder'),
