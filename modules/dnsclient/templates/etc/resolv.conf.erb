@@ -4,5 +4,8 @@
 ## modules/dnsclient/templates/etc/resolv.conf.erb
 
 search <%= searchorder %>
-nameserver <%= nameserver1 %>
-nameserver <%= nameserver2 %>
+# Loop over the array of nameservers
+<% [@nameservers].flatten.each do |server| -%>
+nameserver <%= server %> 
+<% end -%>
+

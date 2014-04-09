@@ -2,7 +2,6 @@
 
 searchorder: 'ds.lib.cam.ac.uk ad.lib.cam.ac.uk lib.cam.ac.uk dmz.caret.local'
 
-nameserver1: '192.168.101.107'
-
-nameserver2: '192.168.101.209'
-
+nameservers:
+  - 192.168.101.107
+  - 192.168.101.209

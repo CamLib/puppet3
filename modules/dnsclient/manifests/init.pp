@@ -10,8 +10,7 @@ class dnsclient (
   }
 
   $searchorder = hiera('searchorder')
-  $nameserver1 = hiera('nameserver1')
-  $nameserver2 = hiera('nameserver2')
+  $nameservers = hiera('nameservers')
 
   file { 
     '/etc/resolv.conf':
