@@ -2,6 +2,7 @@
 
 class dnsclient (
   $dnsclient_packages  = [],
+  $modroot = '',
   $nameservers = [],
   $pkgprovider = '',
   $searchorder = '',
@@ -16,6 +17,6 @@ class dnsclient (
   file { 
     '/etc/resolv.conf':
       ## content => template('/usr/local/etc/puppet/modules/dnsclient/templates/resolv.conf.erb');
-      content => template('%{modroot}/dnsclient/templates/resolv.conf.erb');
+      content => template($modroot/dnsclient/templates/resolv.conf.erb);
   }
 }
