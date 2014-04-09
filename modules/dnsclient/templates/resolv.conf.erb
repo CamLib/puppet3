@@ -4,6 +4,7 @@
 ## modules/dnsclient/templates/etc/resolv.conf.erb
 
 search <%= searchorder %>
+<% end -%>
 # Loop over the array of nameservers
 <% @nameservers.each do |nsserverip| -%>
 nameserver <%= nsserverip %> 
