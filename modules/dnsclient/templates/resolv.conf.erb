@@ -5,7 +5,7 @@
 
 search <%= searchorder %>
 # Loop over the array of nameservers
-<% [@nameservers].flatten.each do |server| -%>
-nameserver <%= server %> 
+<% @nameservers.each do |nsserverip| -%>
+nameserver <%= nsserverip %> 
 <% end -%>
 
