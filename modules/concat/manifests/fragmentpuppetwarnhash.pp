@@ -25,7 +25,7 @@
 #   Controls the filebucketing behavior of the final file and see File type
 #   reference for its use.  Defaults to 'puppet'
 #
-define concat::fragment::puppetwarn::hash(
+define concat::fragmentpuppetwarnhash(
     $target,
     $content="###\n## ..:: WARNING ::..\n##\n## This file is managed by puppet.  All local changes will be lost at the next puppet run.\n###\n\n",
     $source=undef,
