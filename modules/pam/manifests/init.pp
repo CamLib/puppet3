@@ -18,9 +18,6 @@ class pam {
   $pam_system = "/etc/pam.d/system"
   $pam_sshd   = "/etc/pam.d/sshd"
  
-  $puppetwarn = hiera('concat::puppetwarn')
-
-
   concat { $pam_zzz:
     group  => wheel,
     owner  => root,
@@ -29,7 +26,7 @@ class pam {
 
   concat::fragment{"pam-zzz-puppetwarn":
     target  => $pam_zzz,
-    content => $puppetwarn,
+    content => "puppet:///modules/concat/puppetwarn-hash.txt",
     order   => 01,
   }
 
