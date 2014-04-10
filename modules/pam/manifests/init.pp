@@ -13,12 +13,12 @@ class pam {
       #require => Class['ldapclient'];
   #}
 
-  $pam_zzz    = "/etc/pam.d/zzz",
-  $pam_su     = "/etc/pam.d/su",
-  $pam_system = "/etc/pam.d/system",
-  $pam_sshd   = "/etc/pam.d/sshd",
+  $pam_zzz    = "/etc/pam.d/zzz"
+  $pam_su     = "/etc/pam.d/su"
+  $pam_system = "/etc/pam.d/system"
+  $pam_sshd   = "/etc/pam.d/sshd"
  
-  $puppetwarn = hiera('concat::puppetwarn'),
+  $puppetwarn = hiera('concat::puppetwarn')
 
 
   concat { $pam_zzz:
