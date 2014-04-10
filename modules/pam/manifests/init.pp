@@ -13,25 +13,24 @@ class pam {
       #require => Class['ldapclient'];
   #}
 
-  $motd = "/etc/motd"
+  $pamtest = "/etc/pam.d/zzz"
+ 
+  concat{ $pamtest:
+    group  => wheel,
+    owner  => root,
+    mode   => 0644,
+  }
 
-   concat{$motd:
-      owner => root,
-      group => wheel,
-      mode  => '0644',
-   }
+  concat::fragment{"pam-header-1":
+    target  => $motd,
+    content => "\nThis file is managed fairy dust\n\n",
+    order   => 02,
+  }
 
-   concat::fragment{"motd_header":
-      target => $motd,
-      content => "\nPuppet modules on this server:\n\n",
-      order   => 01,
-   }
+  concat::fragment{"pam-header-1":
+    target  => $motd,
+    content => "\nThis file is managed fairy dust\n\n",
+    order   => 01,
+  }
 
-   # local users on the machine can append to motd by just creating
-   # /etc/motd.local
-   concat::fragment{"motd_local":
-      target => $motd,
-      ensure  => "/etc/motd.local",
-      order   => 15
-   }
 }
