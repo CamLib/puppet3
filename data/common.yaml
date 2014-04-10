@@ -1,5 +1,2 @@
 ---
 classes: ['']
-
-puppetroot: '/usr/local/etc/puppet'
-modroot:    '/usr/local/etc/puppet/modules'

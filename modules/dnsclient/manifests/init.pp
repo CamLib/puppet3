@@ -1,19 +1,19 @@
 #/etc/puppet/modules/dnsclient/manifests/init.pp
 
 class dnsclient (
-  $dnsclient_packages  = [],
+  $packages            = [],
   $nameservers         = [],
   $pkgprovider         = '',
   $resolvtemplate      = '',
   $searchorder         = '',
 ) {
 
-  package { $dnsclient_packages: 
+  package { $packages: 
     ensure   =>  installed,
   }
 
   file { 
     '/etc/resolv.conf':
-      content => template($resolvtemplate);
+      content => template(dnsclient/resolv.conf.erb);
   }
 }

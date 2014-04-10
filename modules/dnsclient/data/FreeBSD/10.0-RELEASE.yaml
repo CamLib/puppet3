@@ -1,4 +1,4 @@
 ---
 
-dnsclient::dnsclient_packages:
+dnsclient::packages:
   - 'bind-tools-9.9.5_8'
