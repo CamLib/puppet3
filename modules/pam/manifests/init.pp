@@ -29,7 +29,7 @@ class pam {
 
   concat::fragment{"pam-zzz-puppetwarn":
     target  => $pam_zzz,
-    content => $puppetwarn
+    content => $puppetwarn,
     order   => 01,
   }
 
