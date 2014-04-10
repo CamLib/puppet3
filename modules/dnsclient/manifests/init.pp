@@ -2,17 +2,15 @@
 
 class dnsclient (
   $dnsclient_packages  = [],
-  $nameservers = hiera('nameservers'),
-  $pkgprovider = '',
-  $resolvtemplate = hiera('resolvtemplate'),
-  $searchorder = '',
+  $nameservers         = [],
+  $pkgprovider         = '',
+  $resolvtemplate      = '',
+  $searchorder         = '',
 ) {
 
   package { $dnsclient_packages: 
     ensure   =>  installed,
   }
-
-
 
   file { 
     '/etc/resolv.conf':
