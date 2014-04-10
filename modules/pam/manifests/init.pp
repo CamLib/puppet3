@@ -22,13 +22,13 @@ class pam {
   }
 
   concat::fragment{'pam-header-2':
-    target  => $motd,
+    target  => $pamtest,
     content => '\nThis file is managed fairy dust\n\n',
     order   => 02,
   }
 
   concat::fragment{'pam-header-1':
-    target  => $motd,
+    target  => $pamtest,
     content => '\nThis file used to be managed fairy dust\n\n',
     order   => 01,
   }
