@@ -21,7 +21,7 @@ class pam {
     mode   => 0644,
   }
 
-  concat::fragment{"pam-header-1":
+  concat::fragment{"pam-header-2":
     target  => $motd,
     content => "\nThis file is managed fairy dust\n\n",
     order   => 02,
