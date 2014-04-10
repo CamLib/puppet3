@@ -14,6 +14,6 @@ class dnsclient (
 
   file { 
     '/etc/resolv.conf':
-      content => template(dnsclient/resolv.conf.erb);
+      content => template('dnsclient/resolv.conf.erb');
   }
 }
