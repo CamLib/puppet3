@@ -1,7 +1,7 @@
 #
 define concat::fragment::puppetwarn::hash(
     $target,
-    $content="###\n##         ..:: WARNING ::..\n##\n## This file is managed by puppet.\n## All local changes will be lost at the next puppet run.\n###\n\n",
+    $content="###\n##         ..:: WARNING ::..\n##\n## This file is managed by puppet.\n## All local changes will be lost at the next puppet run.\n##\n###\n\n",
     $source=undef,
     $order=10,
     $ensure = 'present',
