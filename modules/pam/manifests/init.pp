@@ -31,7 +31,7 @@ class pam {
 
   concat::fragment{"pam-header-1":
     target  => $pam_zzz,
-    content => "\nThis file is not managed fairy dust\n\n",
+    content => "This file is not managed fairy dust",
     order   => 99,
   }
 
