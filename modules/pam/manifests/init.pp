@@ -24,9 +24,8 @@ class pam {
     mode   => 0644,
   }
 
-  concat::fragment{"pam-zzz-puppetwarn":
+  concat::fragment::puppetwarn::hash{"pam-zzz-puppetwarn":
     target  => $pam_zzz,
-    content => puppet:///modules/concat/puppetwarn-hash.txt,
     order   => 01,
   }
 
