@@ -12,11 +12,12 @@ class pam {
       #content => template('/usr/local/etc/puppet/modules/pam/templates/pam_su.erb'),
       #require => Class['ldapclient'];
   #}
+
   $motd = "/etc/motd"
 
    concat{$motd:
       owner => root,
-      group => root,
+      group => wheel,
       mode  => '0644',
    }
 
