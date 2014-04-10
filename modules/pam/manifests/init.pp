@@ -15,20 +15,20 @@ class pam {
 
   $pamtest = "/etc/pam.d/zzz"
  
-  concat{ $pamtest:
+  concat { $pamtest:
     group  => wheel,
     owner  => root,
     mode   => 0644,
   }
 
   concat::fragment{"pam-header-2":
-    target  => $motd,
+    target  => $pamtest,
     content => "\nThis file is managed fairy dust\n\n",
     order   => 02,
   }
 
   concat::fragment{"pam-header-1":
-    target  => $motd,
+    target  => $pamtest,
     content => "\nThis file is managed fairy dust\n\n",
     order   => 01,
   }
