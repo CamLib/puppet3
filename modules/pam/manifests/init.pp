@@ -10,7 +10,7 @@ class pam {
  
 
   ## Content variables, as found in hiera data
-  $system-header  = "",
+  $system-header  = ""
 
 
 
@@ -57,7 +57,7 @@ class pam {
       concat::fragment{"pam__insertline_$name":
       target  => $target,
       order   => $order,
-      content => "# Line inserted by puppet ($name),  at order $order.\n   $body\n"
+      content => "# Line inserted by puppet ($name),  at order $order.\n$body\n"
      }
    }
 }
