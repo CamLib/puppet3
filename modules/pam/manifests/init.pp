@@ -40,4 +40,27 @@ class pam {
     pam_modulepath => "pam_opie.so",
     pam_modopts    => "no_warn",
   }
+
+  define recursion(
+    $count
+) {
+    # do something here...
+    notify { "count-${count}":
+    }
+    $minus1 = inline_template('<%= count.to_i - 1 %>')
+    if "${minus1}" == '0' {
+        notify { 'done counting!':
+        }
+    } else {
+        # recurse
+        recursion { "count-${minus1}":
+            count => $minus1,
+        }
+    }
+}
+
+# kick it off...
+recursion { 'start':
+    count => 4,
+}
 }
