@@ -31,6 +31,16 @@ class pam {
     order   => 05,
   }
 
+  <% for idx in (0..1) -%>
+    concat::fragment{"pam-system-header-<%idx%>":
+      target  => $pam_zzz,
+      content => <% testarray1[idx] testarray2[idx]%>,
+      order   => <% idx %> + 10,
+    }
+
+  <% end -%>
+
+
   pam::insertline{"pam-zzz-test":
     target         => $pam_zzz,
     order          => "55",
