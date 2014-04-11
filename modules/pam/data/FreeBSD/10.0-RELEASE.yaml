@@ -7,11 +7,3 @@ pam::system_header: |
  # System-wide defaults
  #
 
-pam:: testarray1:
-  - sufficient
-  - sufficient
-
-pam::testarray2:
-  - pam_rootok.so
-  - pam_self.so
-

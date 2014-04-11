@@ -31,15 +31,6 @@ class pam {
     order   => 05,
   }
 
-  pam::insertline{"pam-zzz-array":
-    target         => $pam_zzz,
-    order          => "55",
-    pam_facility   => "auth",
-    pam_control    => $testarray1,
-    pam_modulepath => $testarray2,
-    pam_modopts    => "",
-  }
-
 
   pam::insertline{"pam-zzz-test":
     target         => $pam_zzz,
