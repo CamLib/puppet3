@@ -31,7 +31,7 @@ class pam {
     order   => 05,
   }
 
-  pam::insertline{"pam-zzz-test30"
+  pam::insertline{"pam-zzz-test30":
     target  => $pam_zzz,
     content => "# A dummy line at order 30 to test insertline",
     order => 30,
