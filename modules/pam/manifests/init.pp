@@ -31,42 +31,12 @@ class pam {
     order   => 05,
   }
 
-  pam::insertline{"pam-zzz-test30":
-    target  => $pam_zzz,
-    content => "# A dummy line at order 30 to test insertline",
-    order => 30,
-    }
-
-  pam::insertline{"pam-zzz-test25":
-    target  => $pam_zzz,
-    content => "# A dummy line at order 25 to test insertline",
-    order => 25,
-    }
-
-#
-# insertline is used by other modules to insert lines in pam config files
-#
-  define pam::insertline(
-    $target = "",
-    $content= "", 
-    $order=10,
-
-    ) {
-
-    if $target != "" {  
-      if $content == "" {
-        $body = "# Empty line inserted by $name.  Check your puppet config."
-      } else {
-        $body = $content
-      }
-
-      concat::fragment{"pam__insertline_$name":
-      target  => $target,
-      order   => $order,
-      content => "# Line inserted by puppet ($name),  at order $order.\n$body\n"
-     }
-   }
-}
-
-
+  pam::insertline{"pam-zzz-test":
+    target         => $pam_zzz,
+    order          => "55",
+    pam_facility   => "auth",
+    pam_control    => "required",
+    pam_modulepath => "pam_opie.so",
+    pam_modopts    => "no_warn",
+  }
 }
