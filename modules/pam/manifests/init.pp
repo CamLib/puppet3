@@ -37,6 +37,12 @@ class pam {
     order => 30,
     }
 
+  pam::insertline{"pam-zzz-test25":
+    target  => $pam_zzz,
+    content => "# A dummy line at order 25 to test insertline",
+    order => 25,
+    }
+
 #
 # insertline is used by other modules to insert lines in pam config files
 #
