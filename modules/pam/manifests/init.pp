@@ -1,23 +1,20 @@
 #/etc/puppet/modules/pam/manifests/init.pp
 
 class pam {
-  #file {
-    #'/etc/pam.d/system':
-      #content => template('/usr/local/etc/puppet/modules/pam/templates/pam_system.erb'),
-      #require => Class['ldapclient'];
-    #'/etc/pam.d/sshd':
-      #content => template('/usr/local/etc/puppet/modules/pam/templates/pam_sshd.erb'),
-      #require => Class['ldapclient'];
-    #'/etc/pam.d/su':
-      #content => template('/usr/local/etc/puppet/modules/pam/templates/pam_su.erb'),
-      #require => Class['ldapclient'];
-  #}
 
+  ## Files being managed
   $pam_zzz    = "/etc/pam.d/zzz"
   $pam_su     = "/etc/pam.d/su"
   $pam_system = "/etc/pam.d/system"
   $pam_sshd   = "/etc/pam.d/sshd"
  
+
+  ## Content variables, as found in hiera data
+  $system-header  = "",
+
+
+
+
   concat { $pam_zzz:
     group  => wheel,
     owner  => root,
@@ -26,13 +23,12 @@ class pam {
 
   concat::fragment::puppetwarn::hash{"pam-zzz-puppetwarn":
     target  => $pam_zzz,
-    order   => 01,
   }
 
-  concat::fragment{"pam-header-1":
+  concat::fragment{"pam-system-header":
     target  => $pam_zzz,
-    content => "This file is not managed fairy dust",
-    order   => 99,
+    content => $system-header,
+    order   => 05,
   }
 
 }
