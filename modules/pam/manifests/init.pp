@@ -47,7 +47,7 @@ class pam {
     $testarray1 = ['a','b','c','d']
     # do something here...
 
-    $thisval = $testarray[${count}]
+    $thisval = $testarray[3]
     notify { "count-${count} $thisval":
     }
     $minus1 = inline_template('<%= count.to_i - 1 %>')
