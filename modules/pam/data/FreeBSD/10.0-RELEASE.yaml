@@ -7,7 +7,7 @@ pam::system_header: |
  # System-wide defaults
  #
 
-pam:: testarray1:
+pam::testarray1:
   - sufficient
   - sufficient
 
