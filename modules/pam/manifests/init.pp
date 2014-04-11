@@ -10,7 +10,7 @@ class pam {
  
 
   ## Content variables, as found in hiera data
-  $system-header  = ""
+  $system_header  = ""
 
 
 
@@ -27,7 +27,7 @@ class pam {
 
   concat::fragment{"pam-system-header":
     target  => $pam_zzz,
-    content => $system-header,
+    content => $system_header,
     order   => 05,
   }
 
