@@ -12,89 +12,89 @@ class pam (
  
 
   ## Content variables, as found in hiera data
-  $generic_header  ='' 
+  $generic_header  ='',
 
 
   ## Data variables
-  $sshd_10_facility   = 'abc'
-  $sshd_10_control    = ''
-  $sshd_10_modulepath = ''
-  $sshd_10_modopts    = ''
+  $sshd_10_facility   = '',
+  $sshd_10_control    = '',
+  $sshd_10_modulepath = '',
+  $sshd_10_modopts    = '',
 
-  $sshd_15_facility   = ""
-  $sshd_15_control    = ""
-  $sshd_15_modulepath = ""
-  $sshd_15_modopts = ""
+  $sshd_15_facility   = "",
+  $sshd_15_control    = "",
+  $sshd_15_modulepath = "",
+  $sshd_15_modopts = "",
 
-  $sshd_20_facility   = ""
-  $sshd_20_control    = ""
-  $sshd_20_modulepath = ""
-  $sshd_20_modopts = ""
+  $sshd_20_facility   = "",
+  $sshd_20_control    = "",
+  $sshd_20_modulepath = "",
+  $sshd_20_modopts = "",
 
-  $sshd_25_facility   = ""
-  $sshd_25_control    = ""
-  $sshd_25_modulepath = ""
-  $sshd_25_modopts = ""
+  $sshd_25_facility   = "",
+  $sshd_25_control    = "",
+  $sshd_25_modulepath = "",
+  $sshd_25_modopts = "",
 
-  $sshd_30_facility   = ""
-  $sshd_30_control    = ""
-  $sshd_30_modulepath = ""
-  $sshd_30_modopts = ""
+  $sshd_30_facility   = "",
+  $sshd_30_control    = "",
+  $sshd_30_modulepath = "",
+  $sshd_30_modopts = "",
 
-  $sshd_35_facility   = ""
-  $sshd_35_control    = ""
-  $sshd_35_modulepath = ""
-  $sshd_35_modopts = ""
+  $sshd_35_facility   = "",
+  $sshd_35_control    = "",
+  $sshd_35_modulepath = "",
+  $sshd_35_modopts = "",
 
-  $sshd_50_facility   = ""
-  $sshd_50_control    = ""
-  $sshd_50_modulepath = ""
-  $sshd_50_modopts = ""
+  $sshd_50_facility   = "",
+  $sshd_50_control    = "",
+  $sshd_50_modulepath = "",
+  $sshd_50_modopts = "",
 
-  $sshd_55_facility   = ""
-  $sshd_55_control    = ""
-  $sshd_55_modulepath = ""
-  $sshd_55_modopts = ""
+  $sshd_55_facility   = "",
+  $sshd_55_control    = "",
+  $sshd_55_modulepath = "",
+  $sshd_55_modopts = "",
 
-  $sshd_60_facility   = ""
-  $sshd_60_control    = ""
-  $sshd_60_modulepath = ""
-  $sshd_60_modopts = ""
+  $sshd_60_facility   = "",
+  $sshd_60_control    = "",
+  $sshd_60_modulepath = "",
+  $sshd_60_modopts = "",
 
-  $sshd_65_facility   = ""
-  $sshd_65_control    = ""
-  $sshd_65_modulepath = ""
-  $sshd_65_modopts = ""
+  $sshd_65_facility   = "",
+  $sshd_65_control    = "",
+  $sshd_65_modulepath = "",
+  $sshd_65_modopts = "",
 
-  $sshd_70_facility   = ""
-  $sshd_70_control    = ""
-  $sshd_70_modulepath = ""
-  $sshd_70_modopts = ""
+  $sshd_70_facility   = "",
+  $sshd_70_control    = "",
+  $sshd_70_modulepath = "",
+  $sshd_70_modopts = "",
 
-  $sshd_80_facility   = ""
-  $sshd_80_control    = ""
-  $sshd_80_modulepath = ""
-  $sshd_80_modopts = ""
+  $sshd_80_facility   = "",
+  $sshd_80_control    = "",
+  $sshd_80_modulepath = "",
+  $sshd_80_modopts = "",
 
-  $sshd_85_facility   = ""
-  $sshd_85_control    = ""
-  $sshd_85_modulepath = ""
-  $sshd_85_modopts = ""
+  $sshd_85_facility   = "",
+  $sshd_85_control    = "",
+  $sshd_85_modulepath = "",
+  $sshd_85_modopts = "",
 
-  $sshd_90_facility   = ""
-  $sshd_90_control    = ""
-  $sshd_90_modulepath = ""
-  $sshd_90_modopts = ""
+  $sshd_90_facility   = "",
+  $sshd_90_control    = "",
+  $sshd_90_modulepath = "",
+  $sshd_90_modopts = "",
 
-  $sshd_95_facility   = ""
-  $sshd_95_control    = ""
-  $sshd_95_modulepath = ""
-  $sshd_95_modopts = ""
+  $sshd_95_facility   = "",
+  $sshd_95_control    = "",
+  $sshd_95_modulepath = "",
+  $sshd_95_modopts = "",
 
-  $sshd_100_facility   = ""
-  $sshd_100_control    = ""
-  $sshd_100_modulepath = ""
-  $sshd_100_modopts = ""
+  $sshd_100_facility   = "",
+  $sshd_100_control    = "",
+  $sshd_100_modulepath = "",
+  $sshd_100_modopts = "",
 ) {
 
   # Declare the files to be created using concat
