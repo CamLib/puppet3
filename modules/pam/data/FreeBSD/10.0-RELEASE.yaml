@@ -14,15 +14,15 @@ pam::generic_header: |
  #
 
 
-pam::sshd_10_facility: 'auth'
-pam::sshd_10_control: 'sufficient'
-pam::sshd_10_modulepath: 'pam_opie.so'
-pam::sshd_10_modopts: 'no_warn no_fake_prompts'
+sshd_10_facility: 'auth'
+sshd_10_control: 'sufficient'
+sshd_10_modulepath: 'pam_opie.so'
+sshd_10_modopts: 'no_warn no_fake_prompts'
 
-pam::sshd_15_facility: 'auth'
-pam::sshd_15_control: 'sufficient'
-pam::sshd_15_modulepath: '/usr/local/lib/pam_ldap.so'
-pam::sshd_15_modopts: 'no_warn'
+sshd_15_facility: "auth"
+sshd_15_control: "sufficient"
+sshd_15_modulepath: "/usr/local/lib/pam_ldap.so"
+sshd_15_modopts: "no_warn"
 
 pam::sshd_20_facility: 'auth'
 pam::sshd_20_control: 'requisite'

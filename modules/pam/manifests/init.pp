@@ -16,10 +16,10 @@ class pam {
 
 
   ## Data variables
-  $sshd_10_facility   = ""
-  $sshd_10_control    = ""
-  $sshd_10_modulepath = ""
-  $sshd_10_modopts = ""
+  $sshd_10_facility   = 'abc'
+  $sshd_10_control    = ''
+  $sshd_10_modulepath = ''
+  $sshd_10_modopts    = ''
 
   $sshd_15_facility   = ""
   $sshd_15_control    = ""
