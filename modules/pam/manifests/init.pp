@@ -132,7 +132,7 @@ class pam (
   concat::fragment{"pam-sshd-header":
     target  => $pam_sshd,
     content => $generic_header,
-    order   => 05,
+    order   => 005,
   }
 
   #concat::fragment{"pam-su-header":
