@@ -1,6 +1,6 @@
 #/etc/puppet/modules/pam/manifests/init.pp
 
-class pam (
+class pam {
 
   ## Files being managed. These are the default
   ## values. As these seem like generic sane defaults.
@@ -12,7 +12,7 @@ class pam (
  
 
   ## Content variables, as found in hiera data
-  $generic_header  = ""
+  $generic_header  ='' 
 
 
   ## Data variables
@@ -96,7 +96,6 @@ class pam (
   $sshd_100_modulepath = ""
   $sshd_100_modopts = ""
 
-) {
 
   # Declare the files to be created using concat
   concat { $pam_zzz:
