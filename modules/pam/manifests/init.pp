@@ -236,4 +236,4 @@ class pam {
     pam_modulepath => $sshd_100_modulepath,
     pam_modopts    => $sshd_100_modopts,
   }
-
+}
