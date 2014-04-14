@@ -89,8 +89,8 @@ pam::sshd_95_control: "sufficient"
 pam::sshd_95_modulepath: "pam_krb5.so"
 pam::sshd_95_modopts: "no_warn try_first_pass"
 
-pam::sshd_facility: "password"
-pam::sshd_control: "required"
-pam::sshd_modulepath: "pam_unix.so"
-pam::sshd_modopts: "no_warn try_first_pass"
+pam::sshd_100_facility: "password"
+pam::sshd_100_control: "required"
+pam::sshd_100_modulepath: "pam_unix.so"
+pam::sshd_100_modopts: "no_warn try_first_pass"
 
