@@ -2,6 +2,3 @@
 :hierarchy:
     - "%{operatingsystem}/%{operatingsystemrelease}"
     - "common"
-
-:yaml:
-    :datadir: .
