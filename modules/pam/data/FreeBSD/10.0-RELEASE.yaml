@@ -3,7 +3,6 @@
 pam::pam_sshd: '/etc/pam.d/sshd'
 pam::pam_su: '/etc/pam.d/su'
 pam::pam_system: '/etc/pam.d/system'
-pam::pam_zzz: '/etc/pam.d/zzz'
 
 
 pam::generic_header: |
@@ -14,15 +13,15 @@ pam::generic_header: |
  #
 
 
-sshd_10_facility: 'auth'
-sshd_10_control: 'sufficient'
-sshd_10_modulepath: 'pam_opie.so'
-sshd_10_modopts: 'no_warn no_fake_prompts'
+pam::sshd_10_facility: 'auth'
+pam::sshd_10_control: 'sufficient'
+pam::sshd_10_modulepath: 'pam_opie.so'
+pam::sshd_10_modopts: 'no_warn no_fake_prompts'
 
-sshd_15_facility: "auth"
-sshd_15_control: "sufficient"
-sshd_15_modulepath: "/usr/local/lib/pam_ldap.so"
-sshd_15_modopts: "no_warn"
+pam::sshd_15_facility: 'auth'
+pam::sshd_15_control: 'sufficient'
+pam::sshd_15_modulepath: '/usr/local/lib/pam_ldap.so'
+pam::sshd_15_modopts: 'no_warn'
 
 pam::sshd_20_facility: 'auth'
 pam::sshd_20_control: 'requisite'
