@@ -1,17 +1,96 @@
 ---
+# Files to manage
+pam::pam_sshd: "/etc/pam.d/sshd"
+pam::pam_su: "/etc/pam.d/su"
+pam::pam_system: "/etc/pam.d/system"
+pam::pam_zzz: "/etc/pam.d/zzz"
 
-pam::system_header: |
+
+pam::generic_header: |
  #
  # $FreeBSD: release/10.0.0/etc/pam.d/system 197769 2009-10-05 09:28:54Z des $
  #
  # System-wide defaults
  #
 
-pam::testarray1:
-  - sufficient
-  - sufficient
 
-pam::testarray2:
-  - pam_rootok.so
-  - pam_self.so
+pam::sshd_10_facility: "auth"
+pam::sshd_10_control: "sufficient"
+pam::sshd_10_modulepath: "pam_opie.so"
+pam::sshd_10_modopts: "no_warn no_fake_prompts"
+
+pam::sshd_15_facility: "auth"
+pam::sshd_15_control: "sufficient"
+pam::sshd_15_modulepath: "/usr/local/lib/pam_ldap.so"
+pam::sshd_15_modopts: "no_warn"
+
+pam::sshd_20_facility: "auth"
+pam::sshd_20_control: "requisite"
+pam::sshd_20_modulepath: "pam_opieaccess.so"
+pam::sshd_20_modopts: "no_warn allow_local"
+
+pam::sshd_25_facility: "#auth"
+pam::sshd_25_control: "sufficient"
+pam::sshd_25_modulepath: "pam_krb5.so"
+pam::sshd_25_modopts: "no_warn try_first_pass"
+
+pam::sshd_30_facility: "#auth"
+pam::sshd_30_control: "sufficient"
+pam::sshd_30_modulepath: "pam_ssh.so"
+pam::sshd_30_modopts: "no_warn try_first_pass"
+
+pam::sshd_35_facility: "auth"
+pam::sshd_35_control: "required"
+pam::sshd_35_modulepath: "pam_unix.so"
+pam::sshd_35_modopts: "no_warn try_first_pass"
+
+pam::sshd_50_facility: "account"
+pam::sshd_50_control: "required"
+pam::sshd_50_modulepath: "pam_nologin.so"
+pam::sshd_50_modopts: ""
+
+pam::sshd_55_facility: "#account"
+pam::sshd_55_control: "required"
+pam::sshd_55_modulepath: "pam_krb5.so"
+pam::sshd_55_modopts: ""
+
+pam::sshd_60_facility: "account"
+pam::sshd_60_control: "required"
+pam::sshd_60_modulepath: "pam_login_access.so"
+pam::sshd_60_modopts: ""
+
+pam::sshd_65_facility: "account"
+pam::sshd_65_control: "required"
+pam::sshd_65_modulepath: "/usr/local/lib/pam_ldap.so"
+pam::sshd_65_modopts: "no_warn ignore_authinfo_unavail ignore_unknown_user"
+
+pam::sshd_70_facility: "account"
+pam::sshd_70_control: "required"
+pam::sshd_70_modulepath: "pam_unix.so"
+pam::sshd_70_modopts: ""
+
+pam::sshd_80_facility: "#session"
+pam::sshd_80_control: "optional"
+pam::sshd_80_modulepath: "pam_ssh.so"
+pam::sshd_80_modopts: "want_agent"
+
+pam::sshd_85_facility: "session"
+pam::sshd_85_control: "required"
+pam::sshd_85_modulepath: "/usr/local/lib/pam_mkhomedir.so"
+pam::sshd_85_modopts: "umask=0077"
+
+pam::sshd_90_facility: "session"
+pam::sshd_90_control: "required"
+pam::sshd_90_modulepath: "pam_permit.so"
+pam::sshd_90_modopts: ""
+
+pam::sshd_95_facility: "#password"
+pam::sshd_95_control: "sufficient"
+pam::sshd_95_modulepath: "pam_krb5.so"
+pam::sshd_95_modopts: "no_warn try_first_pass"
+
+pam::sshd_facility: "password"
+pam::sshd_control: "required"
+pam::sshd_modulepath: "pam_unix.so"
+pam::sshd_modopts: "no_warn try_first_pass"
 

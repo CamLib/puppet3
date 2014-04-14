@@ -2,7 +2,9 @@
 
 class pam {
 
-  ## Files being managed
+  ## Files being managed. These are the default
+  ## values. As these seem like generic sane defaults.
+  ## However you should note that hiera should be populating them.
   $pam_zzz    = "/etc/pam.d/zzz"
   $pam_su     = "/etc/pam.d/su"
   $pam_system = "/etc/pam.d/system"
@@ -12,24 +14,73 @@ class pam {
   ## Content variables, as found in hiera data
   $system_header  = ""
 
-
-
-
+  # Declare the files to be created using concat
   concat { $pam_zzz:
     group  => wheel,
     owner  => root,
     mode   => 0644,
   }
 
+  concat { $pam_sshd:
+    group  => wheel,
+    owner  => root,
+    mode   => 0644,
+  }
+
+  #concat { $pam_su:
+    #group  => wheel,
+    #owner  => root,
+    #mode   => 0644,
+  #}
+
+  #concat { $pam_system:
+    #group  => wheel,
+    #owner  => root,
+    #mode   => 0644,
+  #}
+
+
+  ## Enforce the addition of our puppet warning header
   concat::fragment::puppetwarn::hash{"pam-zzz-puppetwarn":
     target  => $pam_zzz,
   }
 
-  concat::fragment{"pam-system-header":
+  concat::fragment::puppetwarn::hash{"pam-sshd-puppetwarn":
+    target  => $pam_sshd,
+  }
+
+  #concat::fragment::puppetwarn::hash{"pam-su-puppetwarn":
+    #target  => $pam_su,
+  #}
+
+  #concat::fragment::puppetwarn::hash{"pam-system-puppetwarn":
+    #target  => $pam_system,
+  #}
+
+  ## Drop in the default header for the file
+  concat::fragment{"pam-zzz-header":
     target  => $pam_zzz,
-    content => $system_header,
+    content => $generic_header,
     order   => 05,
   }
+
+  concat::fragment{"pam-sshd-header":
+    target  => $pam_sshd,
+    content => $generic_header,
+    order   => 05,
+  }
+
+  #concat::fragment{"pam-su-header":
+    #target  => $pam_su,
+    #content => $generic_header,
+    #order   => 05,
+  #}
+
+  #concat::fragment{"pam-system-header":
+    #target  => $pam_system,
+    #content => $generic_header,
+    #order   => 05,
+  #}
 
 
   pam::insertline{"pam-zzz-test":
@@ -41,29 +92,148 @@ class pam {
     pam_modopts    => "no_warn",
   }
 
-  define recursion(
-    $count
-) {
-    $testarray1 = ['a','b','c','d']
-    # do something here...
 
-    $alength = inline_template('<%= testarray1.length %>')
-    notify { "count-${count} $alength":
-    }
-    $minus1 = inline_template('<%= count.to_i - 1 %>')
-    if "${minus1}" == '0' {
-        notify { 'done counting!':
-        }
-    } else {
-        # recurse
-        recursion { "count-${minus1}":
-            count => $minus1,
-        }
-    }
-}
+  pam::insertline{"pam-sshd-10":
+    target         => $pam_sshd,
+    order          => "10",
+    pam_facility   => $sshd_10_facility,
+    pam_control    => $sshd_10_control,
+    pam_modulepath => $sshd_10_modulepath,
+    pam_modopts    => $sshd_10_modopts,
+  }
 
-# kick it off...
-recursion { 'start':
-    count => 4,
-}
-}
+  pam::insertline{"pam-sshd-15":
+    target         => $pam_sshd,
+    order          => "15",
+    pam_facility   => $sshd_15_facility,
+    pam_control    => $sshd_15_control,
+    pam_modulepath => $sshd_15_modulepath,
+    pam_modopts    => $sshd_15_modopts,
+  }
+
+  pam::insertline{"pam-sshd-20":
+    target         => $pam_sshd,
+    order          => "20",
+    pam_facility   => $sshd_20_facility,
+    pam_control    => $sshd_20_control,
+    pam_modulepath => $sshd_20_modulepath,
+    pam_modopts    => $sshd_20_modopts,
+  }
+
+  pam::insertline{"pam-sshd-25":
+    target         => $pam_sshd,
+    order          => "25",
+    pam_facility   => $sshd_25_facility,
+    pam_control    => $sshd_25_control,
+    pam_modulepath => $sshd_25_modulepath,
+    pam_modopts    => $sshd_25_modopts,
+  }
+
+  pam::insertline{"pam-sshd-30":
+    target         => $pam_sshd,
+    order          => "30",
+    pam_facility   => $sshd_30_facility,
+    pam_control    => $sshd_30_control,
+    pam_modulepath => $sshd_30_modulepath,
+    pam_modopts    => $sshd_30_modopts,
+  }
+
+  pam::insertline{"pam-sshd-35":
+    target         => $pam_sshd,
+    order          => "35",
+    pam_facility   => $sshd_35_facility,
+    pam_control    => $sshd_35_control,
+    pam_modulepath => $sshd_35_modulepath,
+    pam_modopts    => $sshd_35_modopts,
+  }
+
+  pam::insertline{"pam-sshd-50":
+    target         => $pam_sshd,
+    order          => "5",
+    pam_facility   => $sshd_50_facility,
+    pam_control    => $sshd_50_control,
+    pam_modulepath => $sshd_50_modulepath,
+    pam_modopts    => $sshd_50_modopts,
+  }
+
+  pam::insertline{"pam-sshd-55":
+    target         => $pam_sshd,
+    order          => "55",
+    pam_facility   => $sshd_55_facility,
+    pam_control    => $sshd_55_control,
+    pam_modulepath => $sshd_55_modulepath,
+    pam_modopts    => $sshd_55_modopts,
+  }
+
+  pam::insertline{"pam-sshd-60":
+    target         => $pam_sshd,
+    order          => "60",
+    pam_facility   => $sshd_60_facility,
+    pam_control    => $sshd_60_control,
+    pam_modulepath => $sshd_60_modulepath,
+    pam_modopts    => $sshd_60_modopts,
+  }
+
+  pam::insertline{"pam-sshd-65":
+    target         => $pam_sshd,
+    order          => "65",
+    pam_facility   => $sshd_65_facility,
+    pam_control    => $sshd_65_control,
+    pam_modulepath => $sshd_65_modulepath,
+    pam_modopts    => $sshd_65_modopts,
+  }
+
+  pam::insertline{"pam-sshd-70":
+    target         => $pam_sshd,
+    order          => "70",
+    pam_facility   => $sshd_70_facility,
+    pam_control    => $sshd_70_control,
+    pam_modulepath => $sshd_70_modulepath,
+    pam_modopts    => $sshd_70_modopts,
+  }
+
+  pam::insertline{"pam-sshd-80":
+    target         => $pam_sshd,
+    order          => "80",
+    pam_facility   => $sshd_80_facility,
+    pam_control    => $sshd_80_control,
+    pam_modulepath => $sshd_80_modulepath,
+    pam_modopts    => $sshd_80_modopts,
+  }
+
+  pam::insertline{"pam-sshd-85":
+    target         => $pam_sshd,
+    order          => "85",
+    pam_facility   => $sshd_85_facility,
+    pam_control    => $sshd_85_control,
+    pam_modulepath => $sshd_85_modulepath,
+    pam_modopts    => $sshd_85_modopts,
+  }
+
+  pam::insertline{"pam-sshd-90":
+    target         => $pam_sshd,
+    order          => "90",
+    pam_facility   => $sshd_90_facility,
+    pam_control    => $sshd_90_control,
+    pam_modulepath => $sshd_90_modulepath,
+    pam_modopts    => $sshd_90_modopts,
+  }
+
+  pam::insertline{"pam-sshd-95":
+    target         => $pam_sshd,
+    order          => "95",
+    pam_facility   => $sshd_95_facility,
+    pam_control    => $sshd_95_control,
+    pam_modulepath => $sshd_95_modulepath,
+    pam_modopts    => $sshd_95_modopts,
+  }
+
+  pam::insertline{"pam-sshd-100":
+    target         => $pam_sshd,
+    order          => "100",
+    pam_facility   => $sshd_100_facility,
+    pam_control    => $sshd_100_control,
+    pam_modulepath => $sshd_100_modulepath,
+    pam_modopts    => $sshd_100_modopts,
+  }
+
