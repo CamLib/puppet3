@@ -12,7 +12,7 @@ define concat::fragment::puppetwarn::hash(
 ###
 ",
     $source=undef,
-    $order=01,
+    $order=001,
     $ensure = 'present',
     $mode = '0644',
     $owner = $::id,
