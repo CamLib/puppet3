@@ -5,10 +5,10 @@ class pam (
   ## Files being managed. These are the default
   ## values. As these seem like generic sane defaults.
   ## However you should note that hiera should be populating them.
-  $pam_zzz    = "/etc/pam.d/zzz"
-  $pam_su     = "/etc/pam.d/su"
-  $pam_system = "/etc/pam.d/system"
-  $pam_sshd   = "/etc/pam.d/sshd"
+  $pam_zzz    = "/etc/pam.d/zzz",
+  $pam_su     = "/etc/pam.d/su",
+  $pam_system = "/etc/pam.d/system",
+  $pam_sshd   = "/etc/pam.d/sshd",
  
 
   ## Content variables, as found in hiera data
