@@ -26,7 +26,7 @@
       concat::fragment{"insertline_$name":
       target  => $target,
       order   => $order,
-      content => "$commentmarker Line inserted by puppet ($name),  at order $order.\n$body\n"
+      content => "\n$commentmarker Line inserted by puppet ($name),  at order $order.\n$body\n"
      }
    }
 }
