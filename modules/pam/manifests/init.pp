@@ -1,6 +1,6 @@
 #/etc/puppet/modules/pam/manifests/init.pp
 
-class pam {
+class pam 
 
   (
   ## Files being managed. These are the default
