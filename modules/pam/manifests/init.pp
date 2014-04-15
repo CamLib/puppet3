@@ -1,6 +1,5 @@
-class pam 
+class pam (
 
-  (
   ## Files being managed. These are the default
   ## values. As these seem like generic sane defaults.
   ## However you should note that hiera should be populating them.
@@ -305,9 +304,7 @@ class pam
   $system_100_modulepath = "",
   $system_100_modopts    = "",
 
-  )
-
-  {
+  ) {
 
   # Declare the files to be created using concat
   concat { $pam_sshd:
@@ -361,7 +358,7 @@ class pam
   concat::fragment{"pam-system-header":
     target  => $pam_system,
     content => $generic_header,
-    order   => 0§05,
+    order   => 005,
   }
 
 
@@ -661,7 +658,7 @@ class pam
   }
 
 
-  ## pam.d/system
+  ## pam.d/system
   pam::insertline{"pam-system-10":
     target         => $pam_system,
     order          => "010",
