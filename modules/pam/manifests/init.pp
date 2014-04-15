@@ -1,4 +1,3 @@
-#/etc/puppet/modules/pam/manifests/init.pp
 
 class pam 
 
@@ -9,7 +8,7 @@ class pam
   $pam_sshd   = "",
   $pam_su     = "",
   $pam_system = "",
- 
+
 
   ## Content variables, as found in hiera data
   $generic_header  = "",
@@ -363,7 +362,7 @@ class pam
   concat::fragment{"pam-system-header":
     target  => $pam_system,
     content => $generic_header,
-    order   => 05,
+    order   => 0§05,
   }
 
 
