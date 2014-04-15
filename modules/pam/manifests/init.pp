@@ -2,6 +2,7 @@
 
 class pam {
 
-  pam::sshd {}
+  pam::sshd { "pam-sshd": 
+  }
 
 }
