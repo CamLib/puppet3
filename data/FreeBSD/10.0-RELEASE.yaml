@@ -3,3 +3,4 @@
 classes: [ 'base', 'dnsclient', 'ldapclient', 'pam', 'pkgng', 'sudoers' ]
 
 pkgprovider: 'pkgng'
+configdir: '/usr/local/etc'
