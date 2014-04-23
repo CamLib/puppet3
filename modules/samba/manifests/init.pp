@@ -1,4 +1,6 @@
 class samba (
+    $version  = 'present',
+    $packages = false,
 
 ) {
   class{'samba::install': } ->
