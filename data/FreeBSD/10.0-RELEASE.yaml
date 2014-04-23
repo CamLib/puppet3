@@ -1,5 +1,11 @@
 ---
 
-classes: [ 'base', 'dnsclient', 'ldapclient', 'pam', 'pkgng', 'sudoers' ]
+classes:
+    - base
+    - dnsclient
+    - ldapclient
+    - pam
+    - pkgng
+    - sudoers
 
 pkgprovider: 'pkgng'
