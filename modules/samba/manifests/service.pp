@@ -1,6 +1,8 @@
 class samba::service {
+    $ensure = $samba::start ? {true => running, default => stopped}
+
     service{"samba":
-        ensure  => 'running',
-        enable  => true,
+        ensure  => $ensure,
+        enable  => $samba::enable,
     }
 }

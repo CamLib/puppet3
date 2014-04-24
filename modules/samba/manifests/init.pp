@@ -1,7 +1,8 @@
 class samba (
     $version  = 'present',
     $packages = false,
-
+    $enable   = false,
+    $start    = false,
 ) {
   class{'samba::install': } ->
   class{'samba::config': } ~>
