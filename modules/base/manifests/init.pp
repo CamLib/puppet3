@@ -1,12 +1,12 @@
 #/usr/local/etc/puppet/modules/base/manifests/init.pp
 
 class base (
-  $base_packages  = [],
+  $packages  = [],
   $pkgprovider = '',
 ) {
 
 
-  package { $base_packages: 
+  package { $packages: 
     ensure   =>  installed,
   }
 }
