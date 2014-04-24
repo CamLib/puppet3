@@ -1,5 +1,5 @@
 class samba (
-    $version  = 'present',
+    $version  = false,
     $packages = false,
     $service  = false,
     $enable   = false,
