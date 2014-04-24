@@ -1,6 +1,7 @@
 class samba (
     $version  = 'present',
     $packages = false,
+    $service  = false,
     $enable   = false,
     $start    = false,
 ) {
