@@ -1,0 +1,3 @@
+---
+ntp::driftfile: '/var/lib/ntp/ntp.drift'
+ntp::statsdir: '/var/log/ntpstats/'
