@@ -1,0 +1,10 @@
+---
+samba::version: 'latest'
+samba::packages:
+    - samba36
+
+samba::service:
+    - samba
+samba::secrets_tdb: '/var/lib/samba/secrets.tdb'
+samba::configfile: '/usr/local/etc/smb.conf'
+

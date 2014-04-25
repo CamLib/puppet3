@@ -1,0 +1,35 @@
+[global]
+
+   workgroup = MYGROUP
+   server string = Samba Server
+   security = user
+   load printers = no
+   log file = /var/log/samba/log.%m
+   max log size = 64
+;   realm = MY_REALM
+;   passdb backend = tdbsam
+;   include = /usr/local/etc/smb.conf.%m
+
+;   socket options = SO_RCVBUF=8192 SO_SNDBUF=8192
+
+;   interfaces = 192.168.12.2/24 192.168.13.2/24 
+
+;   local master = no
+;   os level = 33
+;   domain master = yes 
+;   preferred master = yes
+
+;   wins support = yes
+;   wins server = w.x.y.z
+;   wins proxy = yes
+   
+   dns proxy = no 
+
+;   display charset = koi8-r
+;   unix charset = koi8-r
+;   dos charset = cp866
+
+;    nt acl support = yes
+;    inherit acls = yes
+;    map acl inherit = yes 
+

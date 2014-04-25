@@ -9,3 +9,4 @@ classes:
     - sudoers
 
 pkgprovider: 'pkgng'
+configdir: '/usr/local/etc'
