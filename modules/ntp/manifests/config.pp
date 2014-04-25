@@ -1,5 +1,5 @@
 class ntp::config (
-  $servers   = '',
+  $servers   = $ntp::servers,
   $driftfile = $ntp::driftfile,
   $statsdir  = $ntp::statsdir,
 
