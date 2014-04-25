@@ -1,6 +1,8 @@
 class ntp::config {
-  $servers = ''
- 
+  $servers   = ''
+  $driftfile = $ntp::driftfile
+  $statsdir  = $ntp::statsdir
+
   File{
     owner   => root,
     group   => root,
