@@ -1,7 +1,9 @@
-class ntp::config {
-  $servers   = ''
-  $driftfile = $ntp::driftfile
-  $statsdir  = $ntp::statsdir
+class ntp::config (
+  $servers   = '',
+  $driftfile = $ntp::driftfile,
+  $statsdir  = $ntp::statsdir,
+
+) {
 
   File{
     owner   => root,
