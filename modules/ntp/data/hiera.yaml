@@ -1,3 +1,4 @@
 ---
 :hierarchy:
+    - "%{operatingsystem}/%{operatingsystemrelease}"
     - common
