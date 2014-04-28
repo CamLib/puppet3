@@ -5,3 +5,4 @@ classes:
   - ldapclient
   - samba
   - ntp
+  - kerberos
