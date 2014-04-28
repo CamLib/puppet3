@@ -1,4 +1,5 @@
 class kerberos::config (
+    $realm = $kerberos::realm,
 
 ) {
  
