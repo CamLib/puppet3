@@ -1,5 +1,6 @@
 class ntp (
   $version = 'latest',
+  $servicename = 'ntp',
   $servers = ['1.pool.ntp.org', '2.pool.ntp.org'],
   $statsdir = '/var/log/ntpstats',
   $driftfile = '/var/lib/ntp/ntp.drift',
