@@ -1,0 +1,4 @@
+---
+:hierarchy:
+    - "%{operatingsystem}/%{operatingsystemrelease}"
+    - common
