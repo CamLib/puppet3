@@ -14,7 +14,7 @@ kdc = <%= server -%>:88
 <% servers.each do |server| %>
 admin_server = <%= server -%>:464
 <% end %>
-default_domain = <%= domain - %>
+default_domain = <%= domain -%>
 }
 
 [domain_realm]
