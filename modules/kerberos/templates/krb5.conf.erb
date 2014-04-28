@@ -8,12 +8,12 @@
 
 [realms]
     <%= realm -%>  = {
-        <% servers.each do |server| -%>
+<% servers.each do |server| -%>
         kdc = <%= server -%>:88
-        <% end -%>
-        <% servers.each do |server| -%>
+<% end -%>
+<% servers.each do |server| -%>
         admin_server = <%= server -%>:464
-        <% end -%>
+<% end -%>
         default_domain = <%= domain %>
     }
 
