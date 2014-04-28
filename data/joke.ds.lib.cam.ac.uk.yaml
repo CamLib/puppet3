@@ -6,3 +6,9 @@ classes:
   - samba
   - ntp
   - kerberos
+
+ntp::servers:
+  - addc01.ad.lib.cam.ac.uk
+  - addc02.ad.lib.cam.ac.uk
+  - addc03.ad.lib.cam.ac.uk
+
