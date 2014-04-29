@@ -1,35 +1,52 @@
 [global]
-
-   workgroup = MYGROUP
-   server string = Samba Server
-   security = user
-   load printers = no
-   log file = /var/log/samba/log.%m
-   max log size = 64
-;   realm = MY_REALM
-;   passdb backend = tdbsam
-;   include = /usr/local/etc/smb.conf.%m
-
-;   socket options = SO_RCVBUF=8192 SO_SNDBUF=8192
-
-;   interfaces = 192.168.12.2/24 192.168.13.2/24 
-
-;   local master = no
-;   os level = 33
-;   domain master = yes 
-;   preferred master = yes
-
-;   wins support = yes
-;   wins server = w.x.y.z
-;   wins proxy = yes
-   
-   dns proxy = no 
-
-;   display charset = koi8-r
-;   unix charset = koi8-r
-;   dos charset = cp866
-
-;    nt acl support = yes
-;    inherit acls = yes
-;    map acl inherit = yes 
+    workgroup = <%= workgroup -%>
+    server string = Samba Server Version %v
+    security = <%= security -%>
+    realm = <%= realm -%>
+    domain master = no
+    local master = no
+    preferred master = no
+        socket options = TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=131072 SO_SNDBUF=131072
+        use sendfile = true
+#        read raw = yes  # Should provide a performance increase but currently untested, YMMV
+#        write raw = yes  # Should provide a performance increase but currently untested, YMMV
+        aio read size = 16384
+        aio write size = 16384
+ 
+    idmap config * : backend = tdb
+    idmap config * : range = 100000-299999
+    idmap config TEST : backend = rid
+    idmap config TEST : range = 10000-99999
+    winbind separator = +
+    winbind enum users = yes
+    winbind enum groups = yes
+    winbind use default domain = yes
+    winbind nested groups = yes
+    winbind refresh tickets = yes
+    template homedir = /home/%U
+    template shell = /bin/sh
+ 
+    client use spnego = yes
+    client ntlmv2 auth = yes
+    encrypt passwords = yes
+    restrict anonymous = 2
+    log file = /var/log/samba/log.%m
+    max log size = 500
+ 
+#============================ Share Definitions ==============================
+ 
+[testshare]
+    comment = Test share
+    path = /samba/testshare
+    read only = no
+    valid users = @"TEST+Domain Users"
+    force group = "Domain Users"
+    directory mode = 0770
+    force directory mode = 0770
+    create mode = 0660
+    force create mode = 0660
+    # Hide share from users who don't have access
+    access based share enum = yes
+    # Hide files/directories if user doesn't have read access
+    hide unreadable = yes
 
