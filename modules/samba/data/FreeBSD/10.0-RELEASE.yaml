@@ -2,7 +2,7 @@
 samba::version: 'latest'
 samba::packages:
     - net/samba36
-samba::provider: 'ports'
+samba::provider: 'portupgrade'
 
 samba::service:
     - samba
