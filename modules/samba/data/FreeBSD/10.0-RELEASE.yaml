@@ -1,7 +1,8 @@
 ---
 samba::version: 'latest'
 samba::packages:
-    - samba36
+    - net/samba36
+samba::provider: 'ports'
 
 samba::service:
     - samba
@@ -9,7 +10,6 @@ samba::service:
 samba::configfile: '/usr/local/etc/smb.conf'
 
 samba::security: 'ads'
-
 samba::workgroup: CUL
 samba::realm: AD.LIB.DS.CAM.AC.UK
 

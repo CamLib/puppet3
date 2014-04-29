@@ -1,6 +1,7 @@
 class samba (
     $version  = 'latest',
     $packages = '',
+    $provider = 'pkgng',
 
     $configfile = '/etc/smb.conf',
 
