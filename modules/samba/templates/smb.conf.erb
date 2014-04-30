@@ -15,8 +15,8 @@
  
     idmap config * : backend = tdb
     idmap config * : range = 100000-299999
-    idmap config TEST : backend = rid
-    idmap config TEST : range = 10000-99999
+    idmap config <%= workgroup -%> : backend = rid
+    idmap config <%= workgroup -%> : range = 10000-99999
     winbind separator = +
     winbind enum users = yes
     winbind enum groups = yes
@@ -39,7 +39,7 @@
     comment = Test share
     path = /samba/testshare
     read only = no
-    valid users = @"TEST+Domain Users"
+    valid users = @"<%= workgroup -%>+Domain Users"
     force group = "Domain Users"
     directory mode = 0770
     force directory mode = 0770
