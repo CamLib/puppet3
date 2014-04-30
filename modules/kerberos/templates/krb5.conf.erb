@@ -16,3 +16,7 @@
         forwardable = true
         krb4_convert = false
     }
+
+[realms]
+    <%= domain -%> = <% realm %>
+    .<%= domain -%> = <% realm %>
