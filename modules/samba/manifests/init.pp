@@ -10,8 +10,8 @@ class samba (
     $realm = '',
 
     $service  = ['smbd', 'nmbd'],
-    $enable   = false,
-    $start    = false,
+    $enable   = true,
+    $start    = true,
 
 ) {
   class{'samba::install': } ->
