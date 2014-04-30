@@ -2,21 +2,16 @@
     default = SYSLOG:INFO:LOCAL7
 
 [libdefaults]
-    ticket_lifetime = 24000
-    clock_skew = 300
-    default_realm = <%= realm -%>
+    dns_lookup_realm = true
+    dns_lookup_kdc = true
+    ticket_lifetime = 24h
+    forwardable = yes
 
-[realms]
-    <%= realm -%>  = {
-<% servers.each do |server| -%>
-        kdc = <%= server -%>:88
-<% end -%>
-<% servers.each do |server| -%>
-        admin_server = <%= server -%>:464
-<% end -%>
-        default_domain = <%= domain %>
+[appdefaults]
+    pam = {
+        debug = false
+        ticket_lifetime = 36000
+        renew_lifetime = 36000
+        forwardable = true
+        krb4_convert = false
     }
-
-[domain_realm]
-    <%= domain -%> = <%= realm -%>
-
