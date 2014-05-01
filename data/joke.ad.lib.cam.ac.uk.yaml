@@ -1,6 +1,4 @@
 ---
-
-
 classes:
   - ldapclient
   - samba
@@ -11,4 +9,6 @@ ntp::servers:
   - addc01.ad.lib.cam.ac.uk
   - addc02.ad.lib.cam.ac.uk
   - addc03.ad.lib.cam.ac.uk
+
+dnsclient::searchorder: 'ad.lib.cam.ac.uk lib.cam.ac.uk dmz.caret.local'
 
