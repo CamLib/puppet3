@@ -1,7 +1,6 @@
 ---
 :hierarchy:
+    - "%{clientcert}"
     - "%{operatingsystem}/%{operatingsystemrelease}"
-    - "common"
+    - common
 
-:yaml:
-    :datadir: .

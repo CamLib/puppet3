@@ -3,4 +3,3 @@
 dnsclient::packages:
   - bind-tools
 
-dnsclient::searchorder: 'ad.lib.cam.ac.uk lib.cam.ac.uk dmz.caret.local'
