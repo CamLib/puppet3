@@ -1,0 +1,3 @@
+[submodule "modules/zfs/files/zfs-auto-snapshot"]
+	path = modules/zfs/files/zfs-auto-snapshot
+	url = https://github.com/CamLib/zfs-auto-snapshot.git
