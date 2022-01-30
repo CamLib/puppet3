@@ -1,4 +1,0 @@
----
-ntp::packages: ['']
-ntp::servicename: 'ntpd'
-ntp::driftfile: '/var/db/ntpd.drift'

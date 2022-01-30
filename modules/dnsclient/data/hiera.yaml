@@ -1,6 +1,0 @@
----
-:hierarchy:
-    - "%{clientcert}"
-    - "%{operatingsystem}/%{operatingsystemrelease}"
-    - common
-
